@@ -1,0 +1,13 @@
+{
+    "Role": "arn:aws:iam::749147323776:role/management",
+    "Rules": [
+        {
+            "Prefix": "",
+            "Status": "Enabled",
+            "Destination": {
+                "Bucket": "arn:aws:s3:::cloudwick-training-output",
+                "StorageClass": "REDUCED_REDUNDANCY"
+            }
+        }
+    ]
+}

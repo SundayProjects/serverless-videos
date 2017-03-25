@@ -1,7 +1,7 @@
 var configConstants = {
     auth0: {
-        domain: 'YOUR_AUTH0_DOMAIN_HERE',
-        clientId: 'YOUR_AUTH0_CLIENT_ID_HERE'
+        domain: 'cloudwick-training.eu.auth0.com',
+        clientId: '94tAiuuqJQdGJm3SpoPekgzH2EIbjxpc'
     },
-    apiBaseUrl: 'YOUR_API_BASE_URL_HERE_NO_TRAILING_SLASH'
+    apiBaseUrl: 'https://0pe93wfcr9.execute-api.eu-west-1.amazonaws.com/dev'
 };

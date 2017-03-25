@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "This Lambda function is used to authorize requests",
   "main": "index.js",
-  "scripts": {
-    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:038671756123:function:custom-authorizer --zip-file fileb://Lambda-Deployment.zip",
+    "scripts": {
+	"create": "aws lambda create-function --function-name custom-authorizer --runtime nodejs4.3 --role arn:aws:iam::749147323776:role/cloudwick-lambda-role --handler index.handler --zip-file fileb://Lambda-Deployment.zip",
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:749147323776:function:custom-authorizer --zip-file fileb://Lambda-Deployment.zip",
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
   },
   "dependencies": {

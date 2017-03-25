@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cloudwick-training",
+  "private_key_id": "7d14cc2a7a8821839c04333f567a89fa1c12570d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEwAIBADANBgkqhkiG9w0BAQEFAASCBKowggSmAgEAAoIBAQDOoJKitf10D9Gw\ntZCP6Vw9/FmZR2eNw2TS+W4pDHekpa/uvOd/jItQ59KLFmi98rLgwwY+n5U2n6SR\n7E5lAQwtYiDBb7t+HnuIsgZNlzc771x6Uk9bp8l+q1N/l/TkFV4tkCY8morhidvI\nkDL2F/rIfbhCExtlqdxkplKIKHpQEymsHlYzgigtYj/NfwHSaYC1+V11uMDiWYFq\nYaqHfVNKGjGy2zfALFqWX5CA1h2HlhW1XbgYuplufPHrDpFugIU/Ve548bIrNwM0\ncHYpXgrlhzFXMBu1/jITIWUgvY5e74JfwCOg2Kld5ioGieDUY/BElelTO4jPlu1O\nh5OKWeEbAgMBAAECggEBAM6HjUn5oia6ERwRvzc5R6vlaiFdT9JQ9ZwzGLsK7SOz\nQNDeHH5PGol5zeacNYF27vjdtoYtuFVq6HG6wvkOPP+3z4nJhpyfF1cgqlAvz1On\nAsZ5Mz0nzq0/ziwA1RSNjx73sGBvEFYzF223RFjayx5PGzdgJchOKi6oWGIkI22Y\ni/HeT1aGNb2ICTb4D/e+LzxmD5OivANCcTyPjN8tvc3NeAyLQlh96Z18vqNqBxh7\nMWEBfXnO74vIR/7AMh3uYyWFo7hzY71jzwqpmsrJl3y9OQU98FRSSHkk+HT/Ww3H\n0rssCYk6dgr8JN9MGZuw7yaRfH1VDwV77q6bSBOjofECgYEA/R2y10kAc17iScYs\nLwepH4gIH8xQ2IW4jUKFwN75F6GlVj9RJoV5MktC37KE9yNtxjhRdOatozFbiA8R\nC+KZ+3a69qrTJaBYARKWMrBVtmQfMunDRb+qsOCRQea2z9AINVOl97XZmPIWAoe5\nzIteKMnXtkTaG1PllNKfDbOYwZ8CgYEA0PtF/1C4IuupmimNjrz4nMpYRcKojkoU\nUy392DO972/691DKr+mLY4anTuywCwBwVhGezeMBSYQr6U/k6cuFfVU8qYLanmQu\n7RDpodGyVidEuIjFFLtr/UWs7v/wH9srXILrU7hlIxyOrfchNOMNSYR6tBau2jPj\n+kBTk7N1RwUCgYEA3yBLAxTLXOiLulUDpgGuyKj14HIP4o8efQfjOH5WPsq0IS93\nremDSR6nOOL565JDtrT2uYKQFofwFCST9lIvQ0kKz18O+uA6M9fap5xiMoJYLl17\nUgT/xyRvaBSlmtPcKIYwjAi2ZOkjFd/nnbRNsM8dZQOU8PooK+TvaPik9CkCgYEA\nlF9yiR0EPzbWSa/q40bjtF4tYgocpjmOSKhEq/XAinkU0/a2kULdRiJaMzz0mDsN\nhu4ns8HSLiH7E0E4I43uDtgvo6JWGVLDxmjVl6BMX8Ktld71Hg0bVMzdRSrNj7CK\nDrqc3enzVIR4AKePGf+CdYnrnGTma+GfoRN+w0UMpQkCgYEA6emUvYuVKexdP/f8\n+cC0qzts/Pfsw7Q+CLTSg0mEL19nrsi6Hy8XDJV5gxWR79uVaUZSBTiiGp8eU0OL\na0R59uuRkPE5QXxM66Yj3IEt2bTd1t8zzHLqY70iGIocoQCTWK12/lkTTwev86gg\nPkyxQdMmttWki8KZx8q4V6N9E4Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloudwick-update-video-db@cloudwick-training.iam.gserviceaccount.com",
+  "client_id": "112128398360108673144",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudwick-update-video-db%40cloudwick-training.iam.gserviceaccount.com"
+}

@@ -62,6 +62,13 @@ var videoController = {
     connectToFirebase: function () {
         var that = this;
 
+	var config = {
+	    apiKey: "AIzaSyBF6xoMeAEHVbgWzDR1rB4Dsgq7_vTgO9c",
+	    authDomain: "cloudwick-training.firebaseapp.com",
+	    databaseURL: "https://cloudwick-training.firebaseio.com",
+	    storageBucket: "cloudwick-training.appspot.com",
+	    messagingSenderId: "1023126653567"
+	};
         /* PASTE CONFIG HERE */
         // var config = {
         //   apiKey: "",
