@@ -40,12 +40,13 @@ function decrypt(text){
 }
 
 function pushVideoEntryToFirebase(callback, key) {
-    console.log("Adding video entry to firebase at key:", key);
+    var encryptedkey = encrypt(key);
+    console.log("Adding video entry to firebase at key:", key, " and ", encryptedkey);
 
     var database = firebase.database().ref();
 
     // create a unique entry for this video in firebase
-    database.child('videos').child(encrypt(key))
+    database.child('videos').child(encryptedkey)
         .set({
             transcoding: true
         })
@@ -72,7 +73,7 @@ exports.handler = function (event, context, callback) {
     console.log("Output key:", sourceKey);
 
     // get the unique video key (the folder name)
-    var uniqueVideoKey = encrypt(outputKey.split('/')[0]);
+    var uniqueVideoKey = outputKey.split('/')[0];
 
     var params = {
         PipelineId: process.env.ELASTIC_TRANSCODER_PIPELINE_ID,
