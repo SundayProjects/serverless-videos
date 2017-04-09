@@ -1,0 +1,23 @@
+{
+  "name": "return-decoded-key",
+  "version": "1.0.0",
+  "description": "This Lambda function will return the decrypted key for our videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-local-lambda --file index.js --event tests/event.json",
+    "create": "aws lambda create-function --function-name return-decoded-key --runtime nodejs4.3 --handler handler --role arn:aws:iam::749147323776:role/test-lambda --zip-file fileb://Lambda-Deployment.zip",
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:749147323776:function:return-decoded-key --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.log"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.3.2",
+    "firebase": "^3.2.1",
+    "crypto": "^0.0.3"
+
+  },
+  "author": "Peter Sbarski",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "run-local-lambda": "^1.1.0"
+  }
+}
