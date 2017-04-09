@@ -16,7 +16,17 @@ var videoController = {
 
         this.connectToFirebase();
     },
-    addVideoToScreen: function (videoId, videoObj) {
+    decryptVideoKeys: function (encryptedkey) {
+            var that = this;
+            var requestDocumentUrl = that.data.config.apiBaseUrl + '/decrypted-key?encryptedkey=' + encodeURI(encryptedkey);
+            var decrypted;
+            $.get(requestDocumentUrl, function (data, status) {
+                decrypted = data.decryptedkey
+            });
+            return decrypted;
+    },
+    addVideoToScreen: function (videoIdEnc, videoObj) {
+	var  videoId = decryptVideoKeys(videoIdEnc)
         // clone the template video element
         var newVideoElement = this.uiElements.videoCardTemplate.clone().attr('id', videoId);
 
@@ -56,7 +66,8 @@ var videoController = {
         // set the video URL
         videoElement.find('video').attr('src', videoObj.source);
     },
-    getElementForVideo: function(videoId) {
+    getElementForVideo: function(videoIdEnc) {
+	var  videoId = decryptVideoKeys(videoIdEnc)
         return $('#' + videoId);
     },
     connectToFirebase: function () {
