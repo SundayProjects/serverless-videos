@@ -18,7 +18,7 @@ var userController = {
         this.uiElements.profileNameLabel = $('#profilename');
         this.uiElements.profileImage = $('#profilepicture');
         this.uiElements.uploadButton = $('#upload-video-button');
-
+	this.uiElements.videoListContainer = $('#video-list-container');
         this.data.config = config;
         this.data.auth0Lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain);
 
@@ -56,6 +56,7 @@ var userController = {
             this.uiElements.profileNameLabel.text(profile.nickname);
             this.uiElements.profileImage.attr('src', profile.picture);
             this.uiElements.uploadButton.css('display', 'inline-block');
+	    this.uiElements.videoListContainer.css('display', 'block');
         }
 
         this.uiElements.loginButton.toggle(!showAuthenticationElements);
@@ -94,6 +95,7 @@ var userController = {
             that.uiElements.profileButton.hide();
             that.uiElements.loginButton.show();
             that.uiElements.uploadButton.hide();
+	    that.uiElements.videoListContainer.hide();
         });
 
         this.uiElements.profileButton.click(function (e) {
