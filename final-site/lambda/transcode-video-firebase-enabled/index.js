@@ -11,7 +11,8 @@
  */
 
 'use strict';
-var cypto = require('crypto');
+
+var crypto = require('crypto');
 var AWS = require('aws-sdk');
 var firebase = require('firebase');
 
@@ -25,15 +26,15 @@ firebase.initializeApp({
 });
 
 function encrypt(text){
-  var cipher = crypto.createCipher('aes-256-cbc','d6F3Efeq')
-  var crypted = cipher.update(text,'utf8','hex')
+  var cipher = crypto.createCipher('aes-256-cbc','d6F3Efeq');
+  var crypted = cipher.update(text,'utf8','hex');
   crypted += cipher.final('hex');
   return crypted;
 }
 
 function decrypt(text){
-  var decipher = crypto.createDecipher('aes-256-cbc','d6F3Efeq')
-  var dec = decipher.update(text,'hex','utf8')
+  var decipher = crypto.createDecipher('aes-256-cbc','d6F3Efeq');
+  var dec = decipher.update(text,'hex','utf8');
   dec += decipher.final('utf8');
   return dec;
 }
@@ -71,7 +72,7 @@ exports.handler = function (event, context, callback) {
     console.log("Output key:", sourceKey);
 
     // get the unique video key (the folder name)
-    var uniqueVideoKey = outputKey.split('/')[0];
+    var uniqueVideoKey = encrypt(outputKey.split('/')[0]);
 
     var params = {
         PipelineId: process.env.ELASTIC_TRANSCODER_PIPELINE_ID,

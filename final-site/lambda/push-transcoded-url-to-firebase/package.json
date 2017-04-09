@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "run-local-lambda --file index.js --event tests/event.json",
-    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:038221756127:function:transcode-video --zip-file fileb://Lambda-Deployment.zip",
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:749147323776:function:push-url-to-firebase --zip-file fileb://Lambda-Deployment.zip",
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.log"
   },
   "dependencies": {
     "aws-sdk": "^2.3.2",
-    "firebase": "^3.2.1"
+    "firebase": "^3.2.1",
+    "crypto": "^0.0.3"
   },
   "author": "Peter Sbarski",
   "license": "BSD-2-Clause",
