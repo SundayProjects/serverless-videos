@@ -11,7 +11,8 @@
  */
 
 'use strict';
-var cypto = require('crypto');
+
+var crypto = require('crypto');
 var AWS = require('aws-sdk');
 var firebase = require('firebase');
 
@@ -25,26 +26,27 @@ firebase.initializeApp({
 });
 
 function encrypt(text){
-  var cipher = crypto.createCipher('aes-256-cbc','d6F3Efeq')
-  var crypted = cipher.update(text,'utf8','hex')
+  var cipher = crypto.createCipher('aes-256-cbc','d6F3Efeq');
+  var crypted = cipher.update(text,'utf8','hex');
   crypted += cipher.final('hex');
   return crypted;
 }
 
 function decrypt(text){
-  var decipher = crypto.createDecipher('aes-256-cbc','d6F3Efeq')
-  var dec = decipher.update(text,'hex','utf8')
+  var decipher = crypto.createDecipher('aes-256-cbc','d6F3Efeq');
+  var dec = decipher.update(text,'hex','utf8');
   dec += decipher.final('utf8');
   return dec;
 }
 
 function pushVideoEntryToFirebase(callback, key) {
-    console.log("Adding video entry to firebase at key:", key);
+    var encryptedkey = encrypt(key);
+    console.log("Adding video entry to firebase at key:", key, " and ", encryptedkey);
 
     var database = firebase.database().ref();
 
     // create a unique entry for this video in firebase
-    database.child('videos').child(encrypt(key))
+    database.child('videos').child(encryptedkey)
         .set({
             transcoding: true
         })

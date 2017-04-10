@@ -19,6 +19,20 @@ var firebase = require('firebase');
 firebase.initializeApp({
   serviceAccount: process.env.SERVICE_ACCOUNT,
   databaseURL: process.env.DATABASE_URL
+}
+
+function encrypt(text){
+  var cipher = crypto.createCipher('aes-256-cbc','d6F3Efeq');
+  var crypted = cipher.update(text,'utf8','hex');
+  crypted += cipher.final('hex');
+  return crypted;
+}
+
+function decrypt(text){
+  var decipher = crypto.createDecipher('aes-256-cbc','d6F3Efeq');
+  var dec = decipher.update(text,'hex','utf8');
+  dec += decipher.final('utf8');
+  return dec;
 });
 
 exports.handler = function(event, context, callback){
@@ -36,7 +50,7 @@ exports.handler = function(event, context, callback){
     var sourceKey = decodeURIComponent(key.replace(/\+/g, ' '));
 
     // get the unique video key (the folder name)
-    var uniqueVideoKey = sourceKey.split('/')[0];
+    var uniqueVideoKey = encrypt(sourceKey.split('/')[0]);
 
     var database = firebase.database().ref();
 
