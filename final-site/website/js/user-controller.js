@@ -32,7 +32,9 @@ var userController = {
 
             this.data.auth0Lock.getProfile(idToken, function (err, profile) {
                 if (err) {
-                    return alert('There was an error getting the profile: ' + err.message);
+                    //return alert('There was an error getting the profile: ' + err.message);
+		    console.log('There was an error getting the profile: ' + err.message);
+		    return "1";
                 }
                 // Display user information
                 that.showUserAuthenticationDetails(profile);
