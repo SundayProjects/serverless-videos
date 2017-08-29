@@ -19,7 +19,7 @@ var firebase = require('firebase');
 firebase.initializeApp({
   serviceAccount: process.env.SERVICE_ACCOUNT,
   databaseURL: process.env.DATABASE_URL
-}
+})
 
 function encrypt(text){
   var cipher = crypto.createCipher('aes-256-cbc','d6F3Efeq');
@@ -33,7 +33,7 @@ function decrypt(text){
   var dec = decipher.update(text,'hex','utf8');
   dec += decipher.final('utf8');
   return dec;
-});
+};
 
 exports.handler = function(event, context, callback){
     context.callbackWaitsForEmptyEventLoop = false;
